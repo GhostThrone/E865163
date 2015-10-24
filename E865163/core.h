@@ -20,11 +20,11 @@ E865163::E865163(std::string cad)
 std::string E865163::encrypt()
 {
 	std::string c = cadena, cadenaBinaria = "", cadenaFinal = "";
-	for (int i = 0; i < c.length(); i++)
+	for (unsigned int i = 0; i < c.length(); i++)
 	{
 		cadenaBinaria += convertIntToBin(c[i]) + ",";
 	}
-	for (int u = 0; u < cadenaBinaria.length(); u++)
+	for (unsigned int u = 0; u < cadenaBinaria.length(); u++)
 	{
 		if(cadenaBinaria[u] == '1')
 			cadenaFinal += "aB";
@@ -51,13 +51,13 @@ std::string E865163::convertIntToBin(int ascii_num)
 	else if(ascii_num < 256)
 		r = 8;
 	std::vector<int> bin(r);
-	for (int i = 0; i < bin.size(); i++)
+	for (unsigned int i = 0; i < bin.size(); i++)
 	{
 		bin[i] = a % 2;
 		a >>= 1;
 	}
 	reverse(bin.begin(), bin.end());
-	for (int i = 0; i < bin.size(); i++)
+	for (unsigned int i = 0; i < bin.size(); i++)
 		binString += std::to_string(bin[i]);
 
 	return binString;
