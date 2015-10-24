@@ -8,7 +8,7 @@ public:
 	std::string decrypt(std::string);
 	std::string convertIntToBin(int);
 	void guardarCadena(std::string);
-	std::string leerCadena();
+	void leerCadena();
 };
 
 E865163::E865163(std::string cad)
@@ -77,10 +77,10 @@ void E865163::guardarCadena(std::string cadena)
 
 std::string E865163::decrypt(std::string cadenaEncriptada)
 {
-
+	return "h";
 }
 
-std::string E865163::leerCadena()
+void E865163::leerCadena()
 {
 	std::string linea, dec;
 	std::ifstream ifile ("fileResult.crygt");
@@ -95,6 +95,13 @@ std::string E865163::leerCadena()
 				__ofile << dec;
 			}
 		}
+		else
+			std::cout << "No se pudo generar el archivo con las respuestas" << std::endl;
 	}
+	else
+	{
+		std::cout << "No se pudo abrir el archivo" << std::endl;
+	}
+	std::cout << "Archivo Guardado" << std::endl;
 }
 
